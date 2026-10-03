@@ -1,0 +1,536 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>DSS Ambulance Service | Reliable Ambulance Services in Delhi NCR, Local & Outstation</title>
+  <meta name="description" content="DSS Ambulance Service provides dependable Normal, Ventilator, and Mortuary Ambulance Services across Delhi NCR, along with local, hospital transfer, patient transportation, and outstation medical journeys. Call 7840089777 / 7678514315.">
+  
+  <!-- Google Fonts & FontAwesome -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Poppins:wght@600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  
+  <!-- Custom Stylesheet -->
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <!-- Top Emergency Strip -->
+  <aside class="emergency-topbar" aria-label="Emergency Contact Bar">
+    <div class="container">
+      <div class="topbar-badge">
+        <span class="pulse-dot"></span>
+        <span>24x7 Ambulance Available – Delhi NCR, Local & Outstation</span>
+      </div>
+      <div class="topbar-info">
+        <span><i class="fa-solid fa-phone-volume"></i> 24/7 Helpline:</span>
+        <a href="tel:7840089777" class="topbar-phone" style="margin-right:10px;">7840089777</a>
+        <span>|</span>
+        <a href="tel:7678514315" class="topbar-phone" style="margin-left:10px;">7678514315</a>
+      </div>
+    </div>
+  </aside>
+
+  <!-- Navigation Header -->
+  <header class="header">
+    <div class="container">
+      <nav class="navbar">
+        <a href="index.html" class="logo">
+          <div class="logo-icon">
+            <i class="fa-solid fa-truck-medical"></i>
+          </div>
+          <div class="logo-text">
+            <span class="logo-title">DSS <span>Ambulance</span></span>
+            <span class="logo-tagline">Delhi NCR • Local • Outstation</span>
+          </div>
+        </a>
+
+        <ul class="nav-links" id="navLinks">
+          <li><a href="index.html" class="nav-link active">Home</a></li>
+          <li><a href="services.html" class="nav-link">Our Services</a></li>
+          <li><a href="about.html" class="nav-link">About Us</a></li>
+          <li><a href="contact.html" class="nav-link">Contact Us</a></li>
+        </ul>
+
+        <div class="nav-cta">
+          <a href="tel:7840089777" class="btn-emergency">
+            <i class="fa-solid fa-phone"></i>
+            <span>Call 7840089777</span>
+          </a>
+          <button class="mobile-toggle" id="mobileToggle" aria-label="Toggle navigation menu">
+            <i class="fa-solid fa-bars"></i>
+          </button>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="hero">
+    <div class="container">
+      <div class="hero-grid">
+        <div class="hero-content">
+          <div class="hero-tag">
+            <i class="fa-solid fa-shield-heart"></i> Reliable Medical Transportation • 24x7 Support
+          </div>
+          <h1 class="hero-title">
+            Reliable <span>Ambulance Services</span> in Delhi NCR, Local & Outstation
+          </h1>
+          <p class="hero-desc">
+            DSS Ambulance Service provides dependable medical transportation services for patients requiring safe and timely travel to hospitals, clinics, homes, and other medical facilities across Delhi NCR and for longer-distance outstation journeys.
+          </p>
+          <div class="hero-buttons">
+            <a href="tel:7840089777" class="btn btn-primary" style="background:#e63946; font-size:1.05rem;">
+              <i class="fa-solid fa-phone-flip"></i> Call Now: 7840089777
+            </a>
+            <a href="tel:7678514315" class="btn btn-secondary" style="font-size:1.05rem;">
+              <i class="fa-solid fa-phone"></i> 7678514315
+            </a>
+            <button class="btn btn-outline-white open-booking-modal">
+              <i class="fa-solid fa-calendar-check"></i> Book Online
+            </button>
+          </div>
+          <div class="hero-highlights">
+            <div class="highlight-item">
+              <i class="fa-solid fa-circle-check"></i> Normal, Ventilator & Mortuary
+            </div>
+            <div class="highlight-item">
+              <i class="fa-solid fa-circle-check"></i> Hospital & Inter-Hospital Transfer
+            </div>
+            <div class="highlight-item">
+              <i class="fa-solid fa-circle-check"></i> Mayur Vihar Ph 3, Delhi Base
+            </div>
+          </div>
+        </div>
+
+        <!-- Quick Request Card -->
+        <div class="booking-card">
+          <div class="booking-header">
+            <h3><i class="fa-solid fa-truck-fast text-primary"></i> Ambulance Booking Assistance</h3>
+            <p>Call or submit details below to enquire about ambulance availability</p>
+          </div>
+          <form class="ambulance-booking-form">
+            <div class="form-group">
+              <label class="form-label" for="pickupLoc">Pickup Location *</label>
+              <div class="input-icon-wrap">
+                <i class="fa-solid fa-location-dot"></i>
+                <input type="text" id="pickupLoc" class="form-control" placeholder="House/Tower, Sector, Landmark (Delhi NCR)" required>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label class="form-label" for="destHospital">Destination / Hospital *</label>
+              <div class="input-icon-wrap">
+                <i class="fa-solid fa-hospital"></i>
+                <input type="text" id="destHospital" class="form-control" placeholder="Hospital, Clinic, Home, or Outstation City" required>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label class="form-label" for="ambType">Ambulance Service Type *</label>
+              <div class="input-icon-wrap">
+                <i class="fa-solid fa-kit-medical"></i>
+                <select id="ambType" class="form-control" required>
+                  <option value="normal" selected>Normal Ambulance (Routine / Appointments)</option>
+                  <option value="ventilator">Ventilator Ambulance (Critical Care & Paramedic)</option>
+                  <option value="mortuary">Mortuary Ambulance (Dignified Deceased Transport)</option>
+                  <option value="hospital-transfer">Hospital / Inter-Hospital Transfer</option>
+                  <option value="outstation">Outstation Ambulance (Long Distance)</option>
+                  <option value="local">Local Delhi NCR Ambulance</option>
+                </select>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label class="form-label" for="patientPhone">Contact Phone Number *</label>
+              <div class="input-icon-wrap">
+                <i class="fa-solid fa-phone"></i>
+                <input type="tel" id="patientPhone" class="form-control" placeholder="Your 10-digit mobile number" required pattern="[0-9]{10}">
+              </div>
+            </div>
+
+            <button type="submit" class="btn btn-primary btn-block" style="padding:14px;">
+              <i class="fa-solid fa-paper-plane"></i> Request Ambulance Now
+            </button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Key Highlights Strip -->
+  <section class="stats-section">
+    <div class="container">
+      <div class="stats-grid">
+        <div class="stat-card">
+          <div class="stat-icon"><i class="fa-solid fa-map-pin"></i></div>
+          <div>
+            <div class="stat-number">Delhi NCR</div>
+            <div class="stat-label">Local & Outstation Services</div>
+          </div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-icon"><i class="fa-solid fa-clock"></i></div>
+          <div>
+            <div class="stat-number">24x7</div>
+            <div class="stat-label">Round-The-Clock Availability</div>
+          </div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-icon"><i class="fa-solid fa-truck-medical"></i></div>
+          <div>
+            <div class="stat-number">3+ Fleet</div>
+            <div class="stat-label">Normal, Ventilator, Mortuary</div>
+          </div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-icon"><i class="fa-solid fa-heart-pulse"></i></div>
+          <div>
+            <div class="stat-number">100%</div>
+            <div class="stat-label">Patient & Attendant Support</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Our Ambulance Services -->
+  <section class="section">
+    <div class="container">
+      <div class="section-title-wrap">
+        <span class="badge-sub">Our Offerings</span>
+        <h2 class="section-title">Our Ambulance Services</h2>
+        <p class="section-subtitle">We provide dependable medical transportation services tailored to individual patient care, clinical urgency, and destination requirements.</p>
+      </div>
+
+      <div class="services-grid">
+        <!-- Service 1: Normal Ambulance -->
+        <article class="service-card">
+          <div class="service-img-wrap">
+            <img src="https://images.unsplash.com/photo-1516574187841-cb9cc2ca948b?auto=format&fit=crop&w=700&q=80" alt="Normal Ambulance Service">
+            <span class="service-badge">Routine Care</span>
+          </div>
+          <div class="service-body">
+            <div class="service-icon-float">
+              <i class="fa-solid fa-truck-medical"></i>
+            </div>
+            <h3>Normal Ambulance Service</h3>
+            <p>For regular patient transportation, routine hospital visits, specialist medical appointments, diagnostic scans, and other non-emergency medical transportation requirements.</p>
+            <ul class="service-features">
+              <li><i class="fa-solid fa-check"></i> Safe stretcher and wheelchair support</li>
+              <li><i class="fa-solid fa-check"></i> Comfortable seating for family attendants</li>
+              <li><i class="fa-solid fa-check"></i> Timely pickup and drop-off</li>
+            </ul>
+            <a href="services.html#normal" class="btn btn-outline btn-block">Read More &rarr;</a>
+          </div>
+        </article>
+
+        <!-- Service 2: Ventilator Ambulance -->
+        <article class="service-card">
+          <div class="service-img-wrap">
+            <img src="https://images.unsplash.com/photo-1587745416684-47953f16f02f?auto=format&fit=crop&w=700&q=80" alt="Ventilator Ambulance Service">
+            <span class="service-badge">Critical Care</span>
+          </div>
+          <div class="service-body">
+            <div class="service-icon-float">
+              <i class="fa-solid fa-lungs"></i>
+            </div>
+            <h3>Ventilator Ambulance Service</h3>
+            <p>For patients who require ventilator-supported medical transportation, oxygen management, vital sign monitoring, and appropriate medical assistance during their journey.</p>
+            <ul class="service-features">
+              <li><i class="fa-solid fa-check"></i> Advanced portable ventilators & oxygen</li>
+              <li><i class="fa-solid fa-check"></i> Cardiac monitors & emergency kit</li>
+              <li><i class="fa-solid fa-check"></i> Trained paramedic assistance onboard</li>
+            </ul>
+            <a href="services.html#ventilator" class="btn btn-outline btn-block">Read More &rarr;</a>
+          </div>
+        </article>
+
+        <!-- Service 3: Mortuary Ambulance -->
+        <article class="service-card">
+          <div class="service-img-wrap">
+            <img src="https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?auto=format&fit=crop&w=700&q=80" alt="Mortuary Ambulance Service">
+            <span class="service-badge">Dignified Transport</span>
+          </div>
+          <div class="service-body">
+            <div class="service-icon-float">
+              <i class="fa-solid fa-ribbon"></i>
+            </div>
+            <h3>Mortuary Ambulance Service</h3>
+            <p>Respectful, dignified, and solemn transportation of deceased persons from hospitals, residences, or other locations to homes, cremation grounds, burial sites, or outstation destinations.</p>
+            <ul class="service-features">
+              <li><i class="fa-solid fa-check"></i> Clean, dignified vehicle setup</li>
+              <li><i class="fa-solid fa-check"></i> Freezer box arrangement available on request</li>
+              <li><i class="fa-solid fa-check"></i> Compassionate & professional support</li>
+            </ul>
+            <a href="services.html#mortuary" class="btn btn-outline btn-block">Read More &rarr;</a>
+          </div>
+        </article>
+      </div>
+
+      <!-- Extended Services Row -->
+      <div style="display:grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap:24px; margin-top:35px;">
+        <div class="feature-box" style="background:#fff; border:1px solid var(--gray-border); padding:24px; border-radius:var(--radius-md);">
+          <div class="feature-icon"><i class="fa-solid fa-hospital"></i></div>
+          <h4>Hospital Transfer</h4>
+          <p>Smooth and timely transportation of patients between hospitals, clinics, nursing homes, and diagnostic facilities across Delhi NCR.</p>
+        </div>
+
+        <div class="feature-box" style="background:#fff; border:1px solid var(--gray-border); padding:24px; border-radius:var(--radius-md);">
+          <div class="feature-icon"><i class="fa-solid fa-arrows-split-up-and-left"></i></div>
+          <h4>Inter-Hospital Transfer</h4>
+          <p>Reliable and coordinated transportation for patients who need to be shifted from one healthcare facility to a specialized hospital.</p>
+        </div>
+
+        <div class="feature-box" style="background:#fff; border:1px solid var(--gray-border); padding:24px; border-radius:var(--radius-md);">
+          <div class="feature-icon"><i class="fa-solid fa-map-location-dot"></i></div>
+          <h4>Local Ambulance Service</h4>
+          <p>Quick ambulance transportation services across all sectors and areas of Delhi NCR for prompt local patient transit requirements.</p>
+        </div>
+
+        <div class="feature-box" style="background:#fff; border:1px solid var(--gray-border); padding:24px; border-radius:var(--radius-md);">
+          <div class="feature-icon"><i class="fa-solid fa-route"></i></div>
+          <h4>Outstation Ambulance Service</h4>
+          <p>Long-distance medical transportation from Delhi NCR to other states and regions, ensuring patient comfort during extended travel.</p>
+        </div>
+
+        <div class="feature-box" style="background:#fff; border:1px solid var(--gray-border); padding:24px; border-radius:var(--radius-md);">
+          <div class="feature-icon"><i class="fa-solid fa-house-medical"></i></div>
+          <h4>Patient Transportation</h4>
+          <p>Comprehensive transportation support for patients travelling between their home, hospital, clinic, diagnostic centre, or rehabilitation facility.</p>
+        </div>
+
+        <div class="feature-box" style="background:#fff; border:1px solid var(--gray-border); padding:24px; border-radius:var(--radius-md);">
+          <div class="feature-icon"><i class="fa-solid fa-people-roof"></i></div>
+          <h4>Patient & Attendant Support</h4>
+          <p>We aim to make the entire transportation process convenient, respectful, and reassuring for patients and accompanying family members.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Why Choose Us -->
+  <section class="section section-bg-light">
+    <div class="container">
+      <div class="section-title-wrap">
+        <span class="badge-sub">Our Advantage</span>
+        <h2 class="section-title">Why Choose DSS Ambulance Service?</h2>
+        <p class="section-subtitle">We are committed to delivering dependable, patient-centred medical transportation when you need it most.</p>
+      </div>
+
+      <div class="features-grid">
+        <div class="feature-box">
+          <div class="feature-icon"><i class="fa-solid fa-shield-halved"></i></div>
+          <h4>Reliable Transportation</h4>
+          <p>We focus on providing dependable, timely, and safe ambulance transportation for patients and their families in every situation.</p>
+        </div>
+
+        <div class="feature-box">
+          <div class="feature-icon"><i class="fa-solid fa-road"></i></div>
+          <h4>Local & Outstation Services</h4>
+          <p>Our fleet coverage spans across Delhi NCR as well as longer-distance intercity and outstation medical transportation.</p>
+        </div>
+
+        <div class="feature-box">
+          <div class="feature-icon"><i class="fa-solid fa-truck-medical"></i></div>
+          <h4>Multiple Ambulance Options</h4>
+          <p>Depending on the patient's condition, choose from Normal Ambulance, Ventilator Ambulance, and Mortuary Ambulance.</p>
+        </div>
+
+        <div class="feature-box">
+          <div class="feature-icon"><i class="fa-solid fa-heart-pulse"></i></div>
+          <h4>Patient-Centred Service</h4>
+          <p>We aim to provide a respectful, comfortable, and well-organised transportation experience for patients and accompanying attendants.</p>
+        </div>
+
+        <div class="feature-box">
+          <div class="feature-icon"><i class="fa-solid fa-phone-volume"></i></div>
+          <h4>Easy Booking</h4>
+          <p>Contact us directly at 7840089777 or 7678514315 to enquire about ambulance availability and quick vehicle arrangement.</p>
+        </div>
+
+        <div class="feature-box">
+          <div class="feature-icon"><i class="fa-solid fa-headset"></i></div>
+          <h4>24x7 Assistance</h4>
+          <p>Round-the-clock telephone and WhatsApp helpline to answer queries and organize immediate or scheduled ambulance dispatch.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Service Area Section -->
+  <section class="section">
+    <div class="container">
+      <div class="about-grid" style="align-items:center;">
+        <div>
+          <span class="badge-sub">Operational Coverage</span>
+          <h2 style="font-size: 2.2rem; margin-bottom: 20px;">Our Service Area</h2>
+          <p style="color:var(--gray); margin-bottom: 16px; font-size:1.05rem;">
+            <strong>DSS Ambulance Service</strong> operates from <strong>Mayur Vihar Phase 3, Delhi</strong>, serving patients across Delhi NCR and providing outstation ambulance transportation to destinations outside Delhi NCR.
+          </p>
+          <ul style="display:flex; flex-direction:column; gap:12px; margin-bottom:25px; color:var(--gray-dark);">
+            <li><i class="fa-solid fa-location-dot text-primary" style="margin-right:8px;"></i> <strong>Delhi NCR Coverage:</strong> East Delhi, South Delhi, Central Delhi, West Delhi, North Delhi, Noida, Greater Noida, Ghaziabad, Faridabad, and Gurugram.</li>
+            <li><i class="fa-solid fa-road text-primary" style="margin-right:8px;"></i> <strong>Outstation Routes:</strong> Uttar Pradesh, Haryana, Rajasthan, Punjab, Uttarakhand, and longer journeys across North India.</li>
+            <li><i class="fa-solid fa-building-circle-arrow-right text-primary" style="margin-right:8px;"></i> <strong>Major Hospitals:</strong> AIIMS, Safdarjung, Max, Fortis, Apollo, Jaypee, Yashoda, Kailash, and all local nursing homes.</li>
+          </ul>
+          <div style="display:flex; gap:12px; flex-wrap:wrap;">
+            <a href="tel:7840089777" class="btn btn-primary"><i class="fa-solid fa-phone"></i> Call 7840089777</a>
+            <a href="tel:7678514315" class="btn btn-secondary"><i class="fa-solid fa-phone"></i> Call 7678514315</a>
+          </div>
+        </div>
+
+        <div class="about-img-group">
+          <div style="background:#f8f9fa; border:2px dashed var(--gray-border); padding:32px; border-radius:var(--radius-lg); text-align:center;">
+            <div style="width:70px; height:70px; background:var(--primary-subtle); color:var(--primary); border-radius:50%; display:flex; align-items:center; justify-content:center; margin:0 auto 20px; font-size:1.8rem;">
+              <i class="fa-solid fa-location-crosshairs"></i>
+            </div>
+            <h3 style="margin-bottom:10px;">Dispatch Base Address</h3>
+            <p style="color:var(--gray-dark); font-weight:600; margin-bottom:6px;">Pocket 6, 137A, Tower 16,</p>
+            <p style="color:var(--gray); margin-bottom:6px;">Mayur Vihar Phase 3, Near Mother Dairy,</p>
+            <p style="color:var(--secondary); font-weight:700; margin-bottom:20px;">Delhi - 110096</p>
+            <a href="https://wa.me/917840089777?text=Hello%20DSS%20Ambulance,%20I%20need%20ambulance%20details" target="_blank" class="btn btn-outline" style="border-color:#25d366; color:#128c7e;">
+              <i class="fa-brands fa-whatsapp"></i> Chat on WhatsApp
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Emergency Callout Banner -->
+  <section class="emergency-cta-banner">
+    <div class="container">
+      <h2>Need an Ambulance?</h2>
+      <p>For Normal, Ventilator, Mortuary, Local, Hospital Transfer, or Outstation Ambulance Services, contact DSS Ambulance Service.</p>
+      <div class="cta-actions">
+        <a href="tel:7840089777" class="btn btn-secondary" style="font-size:1.1rem; padding:15px 30px;">
+          <i class="fa-solid fa-phone"></i> Call: 7840089777
+        </a>
+        <a href="tel:7678514315" class="btn btn-secondary" style="font-size:1.1rem; padding:15px 30px; background:#fff; color:var(--dark);">
+          <i class="fa-solid fa-phone"></i> Call: 7678514315
+        </a>
+        <a href="https://wa.me/917840089777?text=Need%20Ambulance%20Assistance%20Now" target="_blank" class="btn btn-outline-white" style="font-size:1.1rem;">
+          <i class="fa-brands fa-whatsapp"></i> WhatsApp Booking
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-about">
+          <div class="logo" style="margin-bottom:15px;">
+            <div class="logo-icon"><i class="fa-solid fa-truck-medical"></i></div>
+            <div class="logo-text">
+              <span class="logo-title">DSS <span>Ambulance</span></span>
+              <span class="logo-tagline" style="color:#cbd5e1;">Delhi NCR • Local • Outstation</span>
+            </div>
+          </div>
+          <p>DSS Ambulance Service provides dependable medical transportation services for patients requiring safe and timely travel to hospitals, clinics, homes, and other medical facilities.</p>
+          <div style="margin-top:15px;">
+            <span style="display:inline-block; background:rgba(255,255,255,0.1); padding:6px 14px; border-radius:var(--radius-sm); font-size:0.85rem; color:#fff;">
+              <i class="fa-solid fa-location-dot" style="color:var(--primary); margin-right:6px;"></i> Mayur Vihar Phase 3, Delhi
+            </span>
+          </div>
+        </div>
+
+        <div class="footer-col">
+          <h4>Website Pages</h4>
+          <ul class="footer-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="services.html">Ambulance Services</a></li>
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="contact.html">Contact Us</a></li>
+            <li><a href="services.html#service-areas">Service Areas</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4>Our Services</h4>
+          <ul class="footer-links">
+            <li><a href="services.html#normal">Normal Ambulance</a></li>
+            <li><a href="services.html#ventilator">Ventilator Ambulance</a></li>
+            <li><a href="services.html#mortuary">Mortuary Ambulance</a></li>
+            <li><a href="services.html#hospital">Hospital Transfer</a></li>
+            <li><a href="services.html#local">Local Ambulance (Delhi NCR)</a></li>
+            <li><a href="services.html#outstation">Outstation Ambulance</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4>Contact Information</h4>
+          <p><i class="fa-solid fa-location-dot" style="color:var(--primary); margin-right:8px;"></i> Pocket 6, 137A, Tower 16, Mayur Vihar Phase 3, Near Mother Dairy, Delhi</p>
+          <p><i class="fa-solid fa-phone" style="color:var(--primary); margin-right:8px;"></i> <strong><a href="tel:7840089777">7840089777</a></strong></p>
+          <p><i class="fa-solid fa-phone" style="color:var(--primary); margin-right:8px;"></i> <strong><a href="tel:7678514315">7678514315</a></strong></p>
+          <p><i class="fa-brands fa-whatsapp" style="color:#25d366; margin-right:8px;"></i> <a href="https://wa.me/917840089777" target="_blank">Chat with us on WhatsApp</a></p>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p>&copy; 2026 DSS Ambulance Service. All Rights Reserved.</p>
+        <p>Reliable Ambulance Services in Delhi NCR, Local & Outstation.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Floating SOS & WhatsApp -->
+  <div class="floating-sos">
+    <a href="https://wa.me/917840089777?text=Hello%20DSS%20Ambulance,%20I%20need%20urgent%20service" target="_blank" class="whatsapp-btn" title="Chat on WhatsApp">
+      <i class="fa-brands fa-whatsapp"></i>
+    </a>
+    <a href="tel:7840089777" class="sos-btn" title="Call DSS Ambulance (7840089777)">
+      <i class="fa-solid fa-phone"></i>
+    </a>
+  </div>
+
+  <!-- Booking Modal -->
+  <div class="modal-overlay" id="bookingModal">
+    <div class="modal-box">
+      <button class="modal-close" id="closeModalBtn" aria-label="Close modal">&times;</button>
+      <div class="booking-header">
+        <h3><i class="fa-solid fa-truck-medical text-primary"></i> Ambulance Booking Assistance</h3>
+        <p>Call directly or submit details; we will assist you immediately</p>
+      </div>
+      <form class="ambulance-booking-form">
+        <div class="form-group">
+          <label class="form-label">Patient / Contact Person Name *</label>
+          <input type="text" class="form-control" placeholder="Enter name" required>
+        </div>
+        <div class="form-group">
+          <label class="form-label">Pickup Location (Delhi NCR) *</label>
+          <input type="text" class="form-control" placeholder="House/Tower, Sector, Landmark" required>
+        </div>
+        <div class="form-group">
+          <label class="form-label">Destination (Hospital, Clinic, Home, or Outstation) *</label>
+          <input type="text" class="form-control" placeholder="Destination address" required>
+        </div>
+        <div class="form-group">
+          <label class="form-label">Required Ambulance Type *</label>
+          <select class="form-control" required>
+            <option value="normal" selected>Normal Ambulance (Routine / Appointments)</option>
+            <option value="ventilator">Ventilator Ambulance (Critical Care & Paramedic)</option>
+            <option value="mortuary">Mortuary Ambulance (Dignified Deceased Transport)</option>
+            <option value="hospital-transfer">Hospital / Inter-Hospital Transfer</option>
+            <option value="outstation">Outstation Ambulance Service</option>
+            <option value="local">Local Delhi NCR Ambulance</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label class="form-label">Contact Phone Number *</label>
+          <input type="tel" class="form-control" placeholder="10-digit mobile number" required pattern="[0-9]{10}">
+        </div>
+        <button type="submit" class="btn btn-primary btn-block">
+          <i class="fa-solid fa-circle-check"></i> Submit Booking Enquiry
+        </button>
+      </form>
+    </div>
+  </div>
+
+  <!-- Script -->
+  <script src="js/main.js"></script>
+</body>
+</html>
