@@ -8,13 +8,28 @@ document.addEventListener('DOMContentLoaded', () => {
   const navLinks = document.getElementById('navLinks');
 
   if (mobileToggle && navLinks) {
+    document.documentElement.classList.add('js');
+    const mobileViewport = window.matchMedia('(max-width: 768px)');
+    function closeMenu() {
+      navLinks.classList.remove('active');
+      navLinks.hidden = mobileViewport.matches;
+      mobileToggle.setAttribute('aria-expanded', 'false');
+      mobileToggle.setAttribute('aria-label', 'Open navigation menu');
+      const icon = mobileToggle.querySelector('i');
+      if (icon) icon.classList.replace('fa-xmark', 'fa-bars');
+    }
+
     mobileToggle.addEventListener('click', () => {
       navLinks.classList.toggle('active');
+      navLinks.hidden = mobileViewport.matches && !navLinks.classList.contains('active');
+      mobileToggle.setAttribute('aria-expanded', String(navLinks.classList.contains('active')));
+      mobileToggle.setAttribute('aria-label', navLinks.classList.contains('active') ? 'Close navigation menu' : 'Open navigation menu');
       const icon = mobileToggle.querySelector('i');
       if (icon) {
         if (navLinks.classList.contains('active')) {
           icon.classList.remove('fa-bars');
           icon.classList.add('fa-xmark');
+          navLinks.querySelector('a').focus();
         } else {
           icon.classList.remove('fa-xmark');
           icon.classList.add('fa-bars');
@@ -25,95 +40,48 @@ document.addEventListener('DOMContentLoaded', () => {
     // Close menu when clicking outside
     document.addEventListener('click', (e) => {
       if (!navLinks.contains(e.target) && !mobileToggle.contains(e.target) && navLinks.classList.contains('active')) {
-        navLinks.classList.remove('active');
-        const icon = mobileToggle.querySelector('i');
-        if (icon) {
-          icon.classList.remove('fa-xmark');
-          icon.classList.add('fa-bars');
-        }
+        closeMenu();
       }
     });
+
+    document.addEventListener('keydown', (event) => {
+      if (event.key === 'Escape' && navLinks.classList.contains('active')) {
+        closeMenu();
+        mobileToggle.focus();
+      }
+    });
+    mobileViewport.addEventListener('change', () => {
+      const focusedLink = navLinks.contains(document.activeElement);
+      closeMenu();
+      if (mobileViewport.matches && focusedLink) mobileToggle.focus();
+    });
+    navLinks.addEventListener('click', (event) => {
+      if (event.target.closest('a')) closeMenu();
+    });
+    closeMenu();
   }
 
-  // Modal Open / Close Logic
-  const bookingModal = document.getElementById('bookingModal');
-  const openModalBtns = document.querySelectorAll('.open-booking-modal');
-  const closeModalBtn = document.getElementById('closeModalBtn');
-
-  openModalBtns.forEach((btn) => {
-    btn.addEventListener('click', (e) => {
-      e.preventDefault();
-      if (bookingModal) {
-        bookingModal.classList.add('active');
-        document.body.style.overflow = 'hidden';
-      }
+  // The hero is an illustration, not a dispatch status. Without JS it stays still.
+  const heroScene = document.getElementById('heroScene');
+  const animationToggle = document.getElementById('heroAnimationToggle');
+  if (heroScene && animationToggle) {
+    const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
+    const updateMotionPreference = () => {
+      heroScene.classList.toggle('is-animated', !reducedMotion.matches);
+      animationToggle.hidden = reducedMotion.matches;
+    };
+    animationToggle.addEventListener('click', () => {
+      const paused = heroScene.classList.toggle('is-paused');
+      animationToggle.querySelector('i').className = paused ? 'fa-solid fa-play' : 'fa-solid fa-pause';
+      animationToggle.querySelector('span').textContent = paused ? 'Play animation' : 'Pause animation';
     });
-  });
-
-  if (closeModalBtn && bookingModal) {
-    closeModalBtn.addEventListener('click', () => {
-      bookingModal.classList.remove('active');
-      document.body.style.overflow = '';
-    });
-
-    bookingModal.addEventListener('click', (e) => {
-      if (e.target === bookingModal) {
-        bookingModal.classList.remove('active');
-        document.body.style.overflow = '';
-      }
-    });
+    reducedMotion.addEventListener('change', updateMotionPreference);
+    updateMotionPreference();
   }
 
-  // Toast Functionality
-  function showToast(message, type = 'success') {
-    let toast = document.getElementById('notificationToast');
-    if (!toast) {
-      toast = document.createElement('div');
-      toast.id = 'notificationToast';
-      toast.className = 'toast';
-      document.body.appendChild(toast);
-    }
-
-    const icon = type === 'success' ? 'fa-circle-check' : 'fa-triangle-exclamation';
-    toast.innerHTML = `<i class="fa-solid ${icon}"></i> <span>${message}</span>`;
-    toast.classList.add('show');
-
-    setTimeout(() => {
-      toast.classList.remove('show');
-    }, 4500);
-  }
-
-  // Booking Form Submission (Hero & Modal Forms)
-  const bookingForms = document.querySelectorAll('.ambulance-booking-form');
-  bookingForms.forEach((form) => {
-    form.addEventListener('submit', (e) => {
-      e.preventDefault();
-      
-      const submitBtn = form.querySelector('button[type="submit"]');
-      const originalText = submitBtn ? submitBtn.innerHTML : 'Submit Booking';
-
-      if (submitBtn) {
-        submitBtn.disabled = true;
-        submitBtn.innerHTML = '<i class="fa-solid fa-spinner fa-spin"></i> Processing Request...';
-      }
-
-      // Simulate Fast Dispatch confirmation
-      setTimeout(() => {
-        if (submitBtn) {
-          submitBtn.disabled = false;
-          submitBtn.innerHTML = originalText;
-        }
-
-        form.reset();
-
-        if (bookingModal && bookingModal.classList.contains('active')) {
-          bookingModal.classList.remove('active');
-          document.body.style.overflow = '';
-        }
-
-        showToast('Ambulance enquiry received! Our coordinator is calling you immediately. Call 7840089777 for urgent dispatch.', 'success');
-      }, 900);
-    });
+  // Forms stay disabled until online enquiries are explicitly enabled.
+  document.querySelectorAll('.ambulance-booking-form').forEach((form) => {
+    form.addEventListener('submit', (event) => event.preventDefault());
   });
 
   // Set Active Nav Link Automatically based on Current Page URL
